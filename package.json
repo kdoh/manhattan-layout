@@ -3,8 +3,10 @@
   "version": "0.0.0-semantic-release",
   "description": "Layout utilities for React built on top of Manhattan",
   "scripts": {
+    "commit": "git-cz",
     "start": "node server.js",
-    "test" : "standard",
+    "test": "NODE_ENV=test mocha --require babel-core/register --recursive",
+    "test:watch": "npm run test -- --watch",
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -35,7 +37,11 @@
     "babel-preset-react-hmre": "^1.1.0",
     "commitizen": "^2.7.3",
     "cz-conventional-changelog": "^1.1.5",
+    "enzyme": "^2.2.0",
+    "expect": "^1.15.2",
+    "mocha": "^2.4.5",
     "portfinder": "^0.4.0",
+    "react-addons-test-utils": "^0.14.7",
     "semantic-release": "^4.3.5",
     "standard": "^6.0.8",
     "webpack": "^1.12.13",
